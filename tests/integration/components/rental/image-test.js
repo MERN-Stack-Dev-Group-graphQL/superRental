@@ -6,9 +6,7 @@ import { hbs } from "ember-cli-htmlbars";
 module("Integration | Component | rental/image", function (hooks) {
   setupRenderingTest(hooks);
   test("it renders the given image", async function (assert) {
-    await render(hbs`<Rental::Image>
-    template block text
-  </Rental::Image>
+    await render(hbs`
   <Rental::Image
     src="/assets/images/teaching-tomster.png"
     alt="Teaching Tomster"

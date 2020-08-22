@@ -69,15 +69,13 @@ define("super-rentals/tests/integration/components/rental/image-test", ["qunit",
     (0, _qunit.test)("it renders the given image", async function (assert) {
       await (0, _testHelpers.render)(Ember.HTMLBars.template(
       /*
-        <Rental::Image>
-          template block text
-        </Rental::Image>
+        
         <Rental::Image
           src="/assets/images/teaching-tomster.png"
           alt="Teaching Tomster"
         />
       */
-      {"id":"uwBoTADg","block":"{\"symbols\":[],\"statements\":[[8,\"rental/image\",[],[[],[]],[[\"default\"],[{\"statements\":[[2,\"\\n    template block text\\n  \"]],\"parameters\":[]}]]],[2,\"\\n  \"],[8,\"rental/image\",[[24,\"src\",\"/assets/images/teaching-tomster.png\"],[24,\"alt\",\"Teaching Tomster\"]],[[],[]],null]],\"hasEval\":false,\"upvars\":[]}","meta":{}}));
+      {"id":"3C6Sxb8D","block":"{\"symbols\":[],\"statements\":[[2,\"\\n  \"],[8,\"rental/image\",[[24,\"src\",\"/assets/images/teaching-tomster.png\"],[24,\"alt\",\"Teaching Tomster\"]],[[],[]],null]],\"hasEval\":false,\"upvars\":[]}","meta":{}}));
       assert.dom(".image").exists();
       assert.dom(".image img").hasAttribute("src", "/assets/images/teaching-tomster.png");
       assert.dom(".image img").hasAttribute("alt", "Teaching Tomster");
