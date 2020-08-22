@@ -41,6 +41,54 @@ define("super-rentals/tests/integration/components/jumbo-test", ["qunit", "ember
     });
   });
 });
+define("super-rentals/tests/integration/components/rental-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
+  "use strict";
+
+  (0, _qunit.module)("Integration | Component | rental", function (hooks) {
+    (0, _emberQunit.setupRenderingTest)(hooks);
+    (0, _qunit.test)("it renders information about a rental property", async function (assert) {
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        <Rental />
+      */
+      {"id":"hx62gMPb","block":"{\"symbols\":[],\"statements\":[[8,\"rental\",[],[[],[]],null]],\"hasEval\":false,\"upvars\":[]}","meta":{}}));
+      assert.dom("article").hasClass("rental");
+      assert.dom("article h3").hasText("Grand Old Mansion");
+      assert.dom("article .detail.owner").includesText("Veruca Salt");
+      assert.dom("article .detail.type").includesText("Standalone");
+      assert.dom("article .detail.location").includesText("San Francisco");
+      assert.dom("article .detail.bedrooms").includesText("15");
+    });
+  });
+});
+define("super-rentals/tests/integration/components/rental/image-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
+  "use strict";
+
+  (0, _qunit.module)('Integration | Component | rental/image', function (hooks) {
+    (0, _emberQunit.setupRenderingTest)(hooks);
+    (0, _qunit.test)('it renders', async function (assert) {
+      // Set any properties with this.set('myProperty', 'value');
+      // Handle any actions with this.set('myAction', function(val) { ... });
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        <Rental::Image />
+      */
+      {"id":"GMuj6wA1","block":"{\"symbols\":[],\"statements\":[[8,\"rental/image\",[],[[],[]],null]],\"hasEval\":false,\"upvars\":[]}","meta":{}}));
+      assert.equal(this.element.textContent.trim(), ''); // Template block usage:
+
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        
+            <Rental::Image>
+              template block text
+            </Rental::Image>
+          
+      */
+      {"id":"ToVlv+1c","block":"{\"symbols\":[],\"statements\":[[2,\"\\n      \"],[8,\"rental/image\",[],[[],[]],[[\"default\"],[{\"statements\":[[2,\"\\n        template block text\\n      \"]],\"parameters\":[]}]]],[2,\"\\n    \"]],\"hasEval\":false,\"upvars\":[]}","meta":{}}));
+      assert.equal(this.element.textContent.trim(), 'template block text');
+    });
+  });
+});
 define("super-rentals/tests/test-helper", ["super-rentals/app", "super-rentals/config/environment", "@ember/test-helpers", "ember-qunit"], function (_app, _environment, _testHelpers, _emberQunit) {
   "use strict";
 
