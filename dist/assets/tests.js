@@ -64,28 +64,23 @@ define("super-rentals/tests/integration/components/rental-test", ["qunit", "embe
 define("super-rentals/tests/integration/components/rental/image-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
   "use strict";
 
-  (0, _qunit.module)('Integration | Component | rental/image', function (hooks) {
+  (0, _qunit.module)("Integration | Component | rental/image", function (hooks) {
     (0, _emberQunit.setupRenderingTest)(hooks);
-    (0, _qunit.test)('it renders', async function (assert) {
-      // Set any properties with this.set('myProperty', 'value');
-      // Handle any actions with this.set('myAction', function(val) { ... });
+    (0, _qunit.test)("it renders the given image", async function (assert) {
       await (0, _testHelpers.render)(Ember.HTMLBars.template(
       /*
-        <Rental::Image />
+        <Rental::Image>
+          template block text
+        </Rental::Image>
+        <Rental::Image
+          src="/assets/images/teaching-tomster.png"
+          alt="Teaching Tomster"
+        />
       */
-      {"id":"GMuj6wA1","block":"{\"symbols\":[],\"statements\":[[8,\"rental/image\",[],[[],[]],null]],\"hasEval\":false,\"upvars\":[]}","meta":{}}));
-      assert.equal(this.element.textContent.trim(), ''); // Template block usage:
-
-      await (0, _testHelpers.render)(Ember.HTMLBars.template(
-      /*
-        
-            <Rental::Image>
-              template block text
-            </Rental::Image>
-          
-      */
-      {"id":"ToVlv+1c","block":"{\"symbols\":[],\"statements\":[[2,\"\\n      \"],[8,\"rental/image\",[],[[],[]],[[\"default\"],[{\"statements\":[[2,\"\\n        template block text\\n      \"]],\"parameters\":[]}]]],[2,\"\\n    \"]],\"hasEval\":false,\"upvars\":[]}","meta":{}}));
-      assert.equal(this.element.textContent.trim(), 'template block text');
+      {"id":"uwBoTADg","block":"{\"symbols\":[],\"statements\":[[8,\"rental/image\",[],[[],[]],[[\"default\"],[{\"statements\":[[2,\"\\n    template block text\\n  \"]],\"parameters\":[]}]]],[2,\"\\n  \"],[8,\"rental/image\",[[24,\"src\",\"/assets/images/teaching-tomster.png\"],[24,\"alt\",\"Teaching Tomster\"]],[[],[]],null]],\"hasEval\":false,\"upvars\":[]}","meta":{}}));
+      assert.dom(".image").exists();
+      assert.dom(".image img").hasAttribute("src", "/assets/images/teaching-tomster.png");
+      assert.dom(".image img").hasAttribute("alt", "Teaching Tomster");
     });
   });
 });
