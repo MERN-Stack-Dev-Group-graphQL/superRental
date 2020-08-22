@@ -488,24 +488,6 @@
 
   _exports.default = _default;
 });
-;define("super-rentals/templates/application", ["exports"], function (_exports) {
-  "use strict";
-
-  Object.defineProperty(_exports, "__esModule", {
-    value: true
-  });
-  _exports.default = void 0;
-
-  var _default = Ember.HTMLBars.template({
-    "id": "gofoYY5A",
-    "block": "{\"symbols\":[],\"statements\":[[8,\"welcome-page\",[],[[],[]],null],[2,\"\\n\"],[2,\"\\n\"],[1,[30,[36,1],[[30,[36,0],null,null]],null]]],\"hasEval\":false,\"upvars\":[\"-outlet\",\"component\"]}",
-    "meta": {
-      "moduleName": "super-rentals/templates/application.hbs"
-    }
-  });
-
-  _exports.default = _default;
-});
 ;define("super-rentals/templates/contact", ["exports"], function (_exports) {
   "use strict";
 
